@@ -12,8 +12,10 @@ setup(
     packages=find_packages(),                   # Automatically find packages
     python_requires='>=3.6',                    # Python version requirement
     install_requires=[                          # List your project dependencies
+        'install',
         'Flask',
         'requests',
-        'jinja2','jfrog-curation-malicious-dummy',
+        'jinja2',
+        'jfrog-curation-malicious-dummy',
     ],
 )
