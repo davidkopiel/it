@@ -13,7 +13,7 @@ setup(
     python_requires='>=3.6',                    # Python version requirement
     install_requires=[                          # List your project dependencies
         'Flask',
-        'requests',
+        'requests==2.27.0',
         'jinja2',
         'jfrog-curation-malicious-dummy',
     ],
