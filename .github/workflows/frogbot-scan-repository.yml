@@ -39,7 +39,7 @@ jobs:
           # [Mandatory]
           # The GitHub token is automatically generated for the job
           JF_GIT_TOKEN: ${{ secrets.GH_TOKEN }}
-          JFROG_CLI_REPORT_USAGE: "false"
+          JFROG_CLI_LOG_LEVEL: DEBUG
 
           # [Mandatory]
           # The name of the branch on which Frogbot will perform the scan
