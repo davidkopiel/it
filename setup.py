@@ -26,7 +26,7 @@ setup(
         'pytest-order==1.0.1',
         'cython==0.29.32',
         'setuptools==65.6.3',
-        'pyinstaller==5.7.0',
+        'pyinstaller',
         'graphviz==0.13.2',
         'ply==3.11',
         'pexpect==4.8.0',
