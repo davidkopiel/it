@@ -20,7 +20,7 @@ setup(
         'requests==2.31.0',  # Use the latest non-vulnerable version
         'jinja2==2.10',  # Vulnerable to XSS (CVE-2019-10906)
         'jfrog-curation-malicious-dummy==0.0.1',
-        'apache-beam[gcp]==2.31.0',
+        'apache-beam',
         'pytest==7.2.1',
         'pytest-timeout==2.1.0',
         'pytest-order==1.0.1',
