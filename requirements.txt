@@ -1,28 +1,6 @@
 requests==2.27.0     # Vulnerable to HTTP header injection (CVE-2018-18074)
 jinja2==2.10         # Vulnerable to XSS (CVE-2019-10906)
 jfrog-curation-malicious-dummy==0.0.1
-apache-beam
-pytest==7.2.1
-pytest-timeout==2.1.0
-pytest-order==1.0.1
-cython==
-requests==
-setuptools==
-pyinstaller
-graphviz==
-ply==
-pexpect==
-pid==
-psutil==
-munch==
-flake8==
-click==
-black==
-distro==
-fallocate==
-humanfriendly==
-coloredlogs==
-lief==
 
 
 
