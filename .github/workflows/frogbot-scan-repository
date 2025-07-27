@@ -1,6 +1,8 @@
 name: "Frogbot Scan Repository"
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - main  # Set to trigger on pushes to the main branch.
   schedule:
     # The repository will be scanned once a day at 00:00 GMT.
     - cron: "0 0 * * *"
@@ -43,7 +45,7 @@ jobs:
 
           # [Mandatory]
           # The name of the branch on which Frogbot will perform the scan
-          JF_GIT_BASE_BRANCH: ${{ matrix.branch }}
+          JF_GIT_BASE_BRANCH: main
 
           # [Optional, default: https://api.github.com]
           # API endpoint to GitHub
@@ -127,13 +129,13 @@ jobs:
           JF_MIN_SEVERITY: "Critical"
 
           # [Optional, Default: eco-system+frogbot@jfrog.com]
-          # Set the email of the commit author
+          # Set the email of the commit autho
           # JF_GIT_EMAIL_AUTHOR: ""
 
           # [Optional]
           # Set the list of allowed licenses
           # The full list of licenses can be found in:
-          # https://github.com/jfrog/frogbot/blob/master/docs/licenses.md
+          # https://github.com/jfrog/frogbot/blocb/master/docs/licenses.md
           # JF_ALLOWED_LICENSES: "MIT, Apache-2.0"
 
           # [Optional]
