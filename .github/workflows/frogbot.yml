@@ -18,10 +18,7 @@ permissions:
 jobs:
   scan-repository:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        # The repository scanning will be triggered periodically on the following branches.
-        branch: ["main"]
+
     steps:
       - uses: jfrog/frogbot@v2
         # [Mandatory if using OIDC authentication protocol instead of JF_ACCESS_TOKEN]
