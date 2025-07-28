@@ -1,0 +1,15 @@
+params:
+  git:
+    repoName: it-test
+    branches:
+      - main
+
+scans:
+  - type: secrets
+    # This key is for JAS scans like secrets, SAST, and IaC
+    exclude_patterns:
+      - "**/*.git*/**"
+      - "**/*node_modules*/**"
+      - "**/*target*/**"
+      - "**/*venv*/**"
+      - "**/dist/**"
