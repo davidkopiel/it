@@ -1,10 +1,30 @@
+# .frogbot/frogbot-config.yml
 - params:
     git:
       repoName: it-test
       branches:
         - main
   scans:
+    # --- Configuration for Secrets scan ---
     - type: secrets
+      exclude_patterns:
+        - "**/*.git*/**"
+        - "**/*node_modules*/**"
+        - "**/*target*/**"
+        - "**/*venv*/**"
+        - "**/dist/**"
+
+    # --- Configuration for IaC scan ---
+    - type: iac
+      exclude_patterns:
+        - "**/*.git*/**"
+        - "**/*node_modules*/**"
+        - "**/*target*/**"
+        - "**/*venv*/**"
+        - "**/dist/**"
+
+    # --- It's good practice to also include SAST if it's running ---
+    - type: sast
       exclude_patterns:
         - "**/*.git*/**"
         - "**/*node_modules*/**"
