@@ -1,12 +1,10 @@
 name: "Frogbot Security Scan"
-
 on:
   push:
     branches:
-      - main  # Set to trigger on pushes to the main branch.
+      - main # Set to trigger on pushes to the main branch.
   schedule:
-    - cron: "0 0 * * *"   # The repository will be scanned once a day at 00:00 GMT.
-
+    - cron: "0 0 * * *" # The repository will be scanned once a day at 00:00 GMT.
 permissions:
   pull-requests: write
   contents: write
@@ -14,10 +12,10 @@ permissions:
   # [Mandatory If using OIDC authentication protocol instead of JF_ACCESS_TOKEN]
   # id-token: write
 
+  id-token: write
 jobs:
   scan-repository:
     runs-on: ubuntu-latest
-
     steps:
       - uses: jfrog/frogbot@v2
         # [Mandatory if using OIDC authentication protocol instead of JF_ACCESS_TOKEN]
@@ -25,8 +23,10 @@ jobs:
         # with:
         #   oidc-provider-name: ""
         env:
-          JF_URL: ${{ secrets.JF_URL}}
-          JF_ACCESS_TOKEN: ${{ secrets.JF_ACCESS_TOKEN }}
+          JF_URL: ${{ vars.JF_URL }}
           JF_GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          JF_GIT_BASE_BRANCH: main    # For repository scan action
+          JF_GIT_BASE_BRANCH: main # For repository scan action
           JFROG_CLI_LOG_LEVEL: DEBUG
+        with:
+          oidc-provider-name: davidko-davidkopiel
+          oidc-audience: https://github.com/davidkopiel

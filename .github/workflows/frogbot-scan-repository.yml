@@ -1,0 +1,24 @@
+name: "Frogbot Scan Repository"
+on:
+  workflow_dispatch:
+permissions:
+  pull-requests: write
+  contents: write
+  security-events: write
+  id-token: write
+jobs:
+  scan-repository:
+    runs-on: [self-hosted, local, project-it]
+    name: Scan Repository (${{ matrix.branch }} branch)
+    strategy:
+      matrix:
+        branch: ["main"]
+    steps:
+      - uses: jfrog/frogbot@v3
+        env:
+          JF_GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          JF_GIT_BASE_BRANCH: ${{ matrix.branch }}
+          JF_URL: ${{ vars.JF_URL }}
+        with:
+          oidc-provider-name: davidko-davidkopiel
+          oidc-audience: https://github.com/davidkopiel
